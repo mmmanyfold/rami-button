@@ -23,10 +23,10 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+button:hover, button.loading {
     animation: animate 8s linear infinite;
-        animate: 0.5s;
-        transition: 0.5s;
+    animate: 0.5s;
+    transition: 0.5s;
 }
 
 @keyframes animate {
@@ -55,7 +55,7 @@ button:before {
     transition: 0.5s;
 }
 
-button:hover:before {
+button:hover:before, button.loading:before {
     filter: blur(20px);
     opacity: 1;
     animation: animate 8s linear infinite;
