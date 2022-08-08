@@ -1,11 +1,14 @@
-const publish = (element) => {
-    element.innerHTML = "Publishing...";
-    element.classList.add("loading");
+const publish = (btn) => {
+    console.log("click")
+    btn.disabled = true;
+    btn.innerHTML = "Publishing...";
+    btn.classList.add("loading");
     setTimeout(() => {
-        element.innerHTML = "Published!";
+        btn.innerHTML = "Published!";
         setTimeout(() => {
-            element.innerHTML = "Publish";
-            element.classList.remove("loading");
+            btn.innerHTML = "Publish";
+            btn.classList.remove("loading");
+            btn.disabled = false;
         }, 2000);
     }, 5000);
 }
