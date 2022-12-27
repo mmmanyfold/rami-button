@@ -9,6 +9,7 @@ const publish = async (btn) => {
         await fetch(baseUrl + "cv-additional");
         await fetch(baseUrl + "cv-exhibitions-and-screenings");
         await fetch(baseUrl + "info");
+        await fetch(baseUrl + "imprint");
         btn.innerHTML = "Done!";
         setTimeout(() => {
             btn.innerHTML = "Publish";
