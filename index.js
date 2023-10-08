@@ -32,6 +32,7 @@ const publishVirtues = async (btn) => {
     btn.classList.add("loading");
     try {
         await fetch(baseUrl + "virtues-videos");
+        await fetch(baseUrl + "virtues-about");
         btn.innerHTML = "Done!";
         setTimeout(() => {
             btn.innerHTML = "Publish Virtues";
