@@ -10,6 +10,7 @@ const publishArchive = async (btn) => {
         await fetch(baseUrl + "cv-exhibitions-and-screenings");
         await fetch(baseUrl + "info");
         await fetch(baseUrl + "imprint");
+        await fetch(baseUrl + "pages");
         btn.innerHTML = "Done!";
         setTimeout(() => {
             btn.innerHTML = "Publish Archive";
