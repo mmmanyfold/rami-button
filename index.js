@@ -5,12 +5,14 @@ const publishArchive = async (btn) => {
     btn.innerHTML = "Publishing...";
     btn.classList.add("loading");
     try {
-        await fetch(baseUrl + "projects");
-        await fetch(baseUrl + "cv-additional");
-        await fetch(baseUrl + "cv-exhibitions-and-screenings");
-        await fetch(baseUrl + "info");
-        await fetch(baseUrl + "imprint");
-        await fetch(baseUrl + "pages");
+        await Promise.all([
+            fetch(baseUrl + "projects"),
+            fetch(baseUrl + "cv-additional"),
+            fetch(baseUrl + "cv-exhibitions-and-screenings"),
+            fetch(baseUrl + "info"),
+            fetch(baseUrl + "imprint"),
+            fetch(baseUrl + "pages")
+        ])
         btn.innerHTML = "Done!";
         setTimeout(() => {
             btn.innerHTML = "Publish Archive";
@@ -32,8 +34,10 @@ const publishVirtues = async (btn) => {
     btn.innerHTML = "Publishing...";
     btn.classList.add("loading");
     try {
-        await fetch(baseUrl + "virtues-videos");
-        await fetch(baseUrl + "virtues-about");
+        await Promise.all([
+            fetch(baseUrl + "virtues-videos"),
+            fetch(baseUrl + "virtues-about")
+        ])
         btn.innerHTML = "Done!";
         setTimeout(() => {
             btn.innerHTML = "Publish Virtues";
