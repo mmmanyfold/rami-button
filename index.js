@@ -36,7 +36,8 @@ const publishVirtues = async (btn) => {
     try {
         await Promise.all([
             fetch(baseUrl + "virtues-videos"),
-            fetch(baseUrl + "virtues-about")
+            fetch(baseUrl + "virtues-about"),
+            fetch(baseUrl + "virtues-external-links")
         ])
         btn.innerHTML = "Done!";
         setTimeout(() => {
